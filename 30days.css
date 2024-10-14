@@ -1,22 +1,169 @@
-body{
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    animation: fadeIn 1s ease-in-out;
+    position: relative;
+}
+
+/* Background Animation */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, #ff6f61, #f9a825, #03a9f4, #8e24aa);
+    background-size: 400% 400%;
+    z-index: -1;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+/* Title Styles */
+.title {
     text-align: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
+    margin: 20px 0;
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: titleFadeIn 1.5s ease-in-out;
 }
 
-.Time{
-    font-weight: 800;
+/* Target Styles */
+.target {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    animation: targetFadeIn 1.8s ease-in-out;
 }
 
-td{
-    padding: 8px;
-   
+/* Table Styles */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    overflow: hidden;
 }
+
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    animation: rowFadeIn 2s ease-in-out;
+}
+
+th {
+    background-color: #673ab7; /* Deep purple for header */
+    color: white;
+    font-size: 1.2rem;
+}
+
+tr:nth-child(even) {
+    background-color: #e3f2fd; /* Light blue for even rows */
+}
+
+tr:hover {
+    background-color: #bbdefb; /* Light blue on hover */
+    transition: background-color 0.3s ease;
+}
+
+.time{
+    font-weight: 700;
+}
+
 
 h1{
-    color: red;
-    background-color: aqua;
+    
+    background-color: red;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .target {
+        font-size: 1.25rem;
+    }
+
+    table {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+}
+
+/* Animation Effects */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes titleFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes targetFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes rowFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
