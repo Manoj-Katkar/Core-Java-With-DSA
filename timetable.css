@@ -3,12 +3,122 @@ body{
 
 
 }
-
+/* 
 td{
     padding: 16.5px;
    
 }
 
+table{
+    border-collapse: collapse;
+}
+
 .pad{
     padding: 20px 50px;
+} */
+
+
+
+
+
+
+
+
+
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.title {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px #aaa;
+}
+
+/* Table Styles */
+.timetable {
+    width: 100%;
+    /* border-collapse: collapse;
+    border: 1px solid black; */
+    margin: 20px 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.timetable th, 
+.timetable td {
+    padding: 15px;
+    text-align: center;
+}
+
+.timetable th {
+    background-color: #4CAF50;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.timetable tr {
+    transition: background-color 0.3s;
+}
+
+.timetable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.timetable tr:hover {
+    background-color: #ddd;
+}
+
+.timetable td {
+    border-bottom: 1px solid #ddd;
+    font-size: 1em;
+}
+
+/* Link Styling */
+.timetable a {
+    color: #2196F3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.timetable a:hover {
+    color: #0b7dda;
+    text-decoration: underline;
+}
+
+
+.timetable tr {
+    transition: transform 0.3s ease-in-out;
+}
+
+.timetable tr:hover {
+    transform: scale(1.05); /* Zoom in */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+
+    .title {
+        font-size: 2em;
+    }
+
+    .timetable th, 
+    .timetable td {
+        padding: 10px;
+        font-size: 0.9em;
+    }
 }
