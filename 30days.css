@@ -12,6 +12,7 @@ body {
     line-height: 1.6;
     animation: fadeIn 1s ease-in-out;
     position: relative;
+    padding-bottom: 40px;
 }
 
 /* Background Animation */
@@ -27,6 +28,14 @@ body::before {
     z-index: -1;
     animation: gradientAnimation 15s ease infinite;
 }
+
+.tableBox {
+    margin: 20px auto; /* Centers the table horizontally */
+    width: 90%; /* Ensures responsiveness */
+    max-width: 1200px; /* Optional: limits the width of the table */
+}
+
+
 
 /* Title Styles */
 .title {
