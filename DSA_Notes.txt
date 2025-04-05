@@ -1,0 +1,2 @@
+About the For Loops : 
+                i) if the condition is false at the first check only in the for loop then that loop will never get executed (Very important)
