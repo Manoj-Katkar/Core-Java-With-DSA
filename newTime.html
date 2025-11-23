@@ -4,48 +4,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Study Timetable</title>
-    <link rel="stylesheet" href="styles.css">
+
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            text-align: center;
+            background-color: #eef2f3;
             margin: 0;
             padding: 0;
+            text-align: center;
         }
+
+        .quotes-container {
+            background: linear-gradient(135deg, #007bff, #00c6ff);
+            color: white;
+            padding: 25px 15px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .quote {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .author {
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: block;
+        }
+
         .container {
-            width: 80%;
-            margin: 20px auto;
+            width: 90%;
+            max-width: 900px;
+            margin: 30px auto;
             background: white;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
+
         h1 {
             color: #333;
+            margin-bottom: 15px;
         }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
+            margin-top: 15px;
         }
+
         th, td {
             border: 1px solid #ddd;
-            padding: 10px;
+            padding: 12px 10px;
             text-align: left;
+            font-size: 0.95rem;
         }
+
         th {
             background-color: #007bff;
             color: white;
+            font-size: 1rem;
         }
+
         tr:nth-child(even) {
-            background-color: #f2f2f2;
+            background-color: #f8f8f8;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+
+            th {
+                display: none;
+            }
+
+            tr {
+                margin-bottom: 15px;
+                background: #fff;
+                border-radius: 10px;
+                padding: 10px;
+                box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            }
+
+            td {
+                border: none;
+                padding: 8px 5px;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            td::before {
+                content: attr(data-label);
+                font-weight: bold;
+                color: #007bff;
+            }
         }
     </style>
 </head>
+
 <body>
+
+    <!-- Motivational Quotes Section -->
+    <div class="quotes-container">
+        <div class="quote">"Never give up. Today is hard, tomorrow will be worse, but the day after tomorrow will be sunshine."</div>
+        <span class="author">– Jack Ma</span>
+
+        <div class="quote">"When something is important enough, you do it even if the odds are not in your favor."</div>
+        <span class="author">– Elon Musk</span>
+
+        <div class="quote">"Never bend your head. Always hold it high. Look the world straight in the eye."</div>
+        <span class="author">– Chhatrapati Shivaji Maharaj</span>
+    </div>
+
     <div class="container">
         <h1>Daily Study Timetable</h1>
+
         <table>
             <thead>
                 <tr>
@@ -54,14 +132,45 @@
                 </tr>
             </thead>
             <tbody>
-                <tr><td>7:00 AM - 8:00 AM</td><td>Wake Up and Bath,BreakFast</td></tr>
-                <tr><td>8:00 AM - 11:00 AM</td><td>MERN Lecture /DSA Lecture</td></tr>
-                <tr><td>11:00 AM - 11:30 AM</td><td>Small Break</td></tr>
-                <tr><td>11:30 AM - 9.00 PM</td><td>Do JOb , Travel , and also learn new things in Job About Mobile App development Native</td></tr>
-                <tr><td>9:00 PM - 10:00 PM</td><td>Dinner and Relax</td></tr>
-                <tr><td>10:00 PM - 12:00 AM</td><td>MERN Assignment (Goal: Clear mock interview by 8 November, 2025) / then DSA Practice (Goal: Solve 5 problems daily)</td></tr>
+                <tr>
+                    <td data-label="Time Slot">6:30 AM - 7:00 AM</td>
+                    <td data-label="Activity Description">Wake Up and Bath, Breakfast</td>
+                </tr>
+
+                <tr>
+                    <td data-label="Time Slot">7:10 AM - 11:00 AM</td>
+                    <td data-label="Activity Description">MERN Lecture for 16 days, then DSA Lecture</td>
+                </tr>
+
+                <tr>
+                    <td data-label="Time Slot">11:00 AM - 11:30 AM</td>
+                    <td data-label="Activity Description">Break and Breakfast</td>
+                </tr>
+
+                <tr>
+                    <td data-label="Time Slot">11:30 AM - 9:00 PM</td>
+                    <td data-label="Activity Description">
+                        Job, Travel, and learning new things about Mobile App Development (Native side).
+                        Read daily docs and implement learnings.
+                    </td>
+                </tr>
+
+                <tr>
+                    <td data-label="Time Slot">9:00 PM - 10:00 PM</td>
+                    <td data-label="Activity Description">Dinner and Relax</td>
+                </tr>
+
+                <tr>
+                    <td data-label="Time Slot">10:00 PM - 12:00 AM</td>
+                    <td data-label="Activity Description">
+                        MERN Assignments (Goal: clear mock interview by 12 Dec 2025) <br>
+                        OR DSA Practice (Goal: 5 problems daily)
+                    </td>
+                </tr>
             </tbody>
         </table>
+
     </div>
+
 </body>
 </html>
